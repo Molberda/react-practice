@@ -6,7 +6,7 @@ import Modal from "./components/Modal.jsx";
 function App() {
   return (
     <div>
-      <Title />
+      <Title title="My ToDo List" />
       <div className="todo__wrapper">
         <Todo 
         title="Finish Frontend" 
@@ -18,9 +18,9 @@ function App() {
         title="Land a $100K Job" 
         button="Next Up" />
       </div>
-      {/* <Modal 
+      <Modal 
       question="Are you sure?"
-      /> */}
+      />
     </div>
   );
 }
