@@ -4,6 +4,7 @@ import Title from "./components/Title.jsx";
 import Modal from "./components/Modal.jsx";
 
 function App() {
+  let isModalOpen = false
   return (
     <div>
       <Title title="My ToDo List" />
@@ -18,11 +19,14 @@ function App() {
         title="Land a $100K Job" 
         button="Next Up" />
       </div>
-      <Modal 
+      {isModalOpen ? <Modal 
       question="Are you sure?"
-      />
+      /> : null }
     </div>
   );
 }
 
 export default App;
+
+
+// minute 47:11
