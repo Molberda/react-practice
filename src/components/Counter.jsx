@@ -2,12 +2,26 @@ import React, { useState } from "react";
 import './Counter.css'
 
 function Counter() {
-  const [count, action] = useState(0);
+    const [cart, setCart] = useState({item:'apple', quantity:0})
+
+function addApple() {
+    setCart(prevCart => ({
+        ...prevCart,
+        quantity: prevCart.quantity + 1,
+    }))
+}
+
+function subApple() {
+    setCart(prevCart => ({
+        ...prevCart,
+        quantity: prevCart.quantity - 1,
+    }))
+}
   return (
     <div className="counter">
-      <button onClick={() => action(count - 1)}>-</button>
-      <h1>{count}</h1>
-      <button onClick={() => action(count + 1)} >+</button>
+      <button onClick={subApple}>-</button>
+      <h1>{cart.quantity}{cart.item}</h1>
+      <button onClick={addApple} >+</button>
     </div>
   );
 }
