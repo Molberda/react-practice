@@ -13,17 +13,20 @@ function Home() {
       setUser(data);
     }
     useEffect(() => {
-      fetchData();
+        setTimeout(() => {
+            fetchData();
+        }, 1000)
     }, []);
  return (
     <div>
-        {users.map((user) => (
+        {users.length > 0 ? users.map((user) => (
             <Link key={user.id} to = {`/users/${user.id}`}>
                 <User 
                 name={user.name}
+                email={user.email}
                 />
             </Link>
-        ))}
+        )): <h1>Loading...</h1> }
     </div>
  )
 }

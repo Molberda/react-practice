@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import User from "../components/User.jsx";
+import { useParams } from "react-router-dom";
 
 function Users() {
   const { id } = useParams();
@@ -14,7 +13,7 @@ function Users() {
     setUser(data);
   }
   useEffect(() => {
-    fetchUser();
+        fetchUser();
   }, []);
   return (
     <div>
